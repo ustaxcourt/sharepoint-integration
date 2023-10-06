@@ -17,7 +17,7 @@ export type CreateSharepointFolder = ({
   siteId: string;
 }) => Promise<any>;
 
-export const CreateSharepointFolder: CreateSharepointFolder = async ({
+export const createSharepointFolder: CreateSharepointFolder = async ({
   client,
   folderName,
   opts,

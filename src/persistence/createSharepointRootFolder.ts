@@ -1,4 +1,4 @@
-import { Client } from "@microsoft/microsoft-graph-client";
+import { type Client } from "@microsoft/microsoft-graph-client";
 import type { FolderOptions } from "../types/FolderOptions";
 import { validateFolderName } from "../helpers/validateFolderName";
 
@@ -20,6 +20,7 @@ export const createSharepointRootFolder: CreateSharepointRootFolder = async ({
   siteId,
 }) => {
   validateFolderName(folderName);
+
   return await client.api(`/sites/${siteId}/drive/root/children`).post({
     name: folderName,
     folder: {},

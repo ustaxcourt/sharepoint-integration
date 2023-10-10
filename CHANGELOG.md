@@ -1,5 +1,11 @@
 # @ustaxcourt/sharepoint-integration
 
+## 0.0.5
+
+### Patch Changes
+
+- e3b9e08: fix entry point
+
 ## 0.0.4
 
 ### Patch Changes

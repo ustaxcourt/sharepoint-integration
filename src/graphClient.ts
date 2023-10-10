@@ -5,24 +5,56 @@
  * -------------------------------------------------------------------------------------------
  */
 
-const { Client } = require("@microsoft/microsoft-graph-client");
-const {
-  TokenCredentialAuthenticationProvider,
-} = require("@microsoft/microsoft-graph-client/authProviders/azureTokenCredentials");
-const { ClientSecretCredential } = require("@azure/identity");
+import { Client } from "@microsoft/microsoft-graph-client";
+import { TokenCredentialAuthenticationProvider } from "@microsoft/microsoft-graph-client/authProviders/azureTokenCredentials";
+import { ClientSecretCredential } from "@azure/identity";
+import "isomorphic-fetch";
 
-require("isomorphic-fetch");
+export type CreateGraphClientParameters = {
+  tenantId?: string;
+  graphClientId?: string;
+  graphClientSecret?: string;
+};
 
-const credential = new ClientSecretCredential(
-  process.env.MS_GRAPH_TENANT_ID,
-  process.env.MS_GRAPH_CLIENT_ID,
-  process.env.MS_GRAPH_CLIENT_SECRET
-);
-const authProvider = new TokenCredentialAuthenticationProvider(credential, {
-  scopes: ["https://graph.microsoft.com/.default"],
-});
+export type CreateGraphClientFunction = ({
+  tenantId,
+  graphClientId,
+  graphClientSecret,
+}: CreateGraphClientParameters) => Client;
 
-export const graphClient = Client.initWithMiddleware({
-  debugLogging: true,
-  authProvider,
-});
+export const createGraphClient: CreateGraphClientFunction = ({
+  tenantId,
+  graphClientId,
+  graphClientSecret,
+}) => {
+  tenantId = tenantId || process.env.MS_GRAPH_TENANT_ID;
+  graphClientId = graphClientId || process.env.MS_GRAPH_CLIENT_ID;
+  graphClientSecret = graphClientSecret || process.env.MS_GRAPH_CLIENT_SECRET;
+
+  if (!tenantId) {
+    throw new Error("Missing required variable: tenantId");
+  }
+
+  if (!graphClientId) {
+    throw new Error("Missing required variable: graphClientId");
+  }
+
+  if (!graphClientSecret) {
+    throw new Error("Missing required variable: graphClientSecret");
+  }
+
+  const credential = new ClientSecretCredential(
+    tenantId,
+    graphClientId,
+    graphClientSecret
+  );
+
+  const authProvider = new TokenCredentialAuthenticationProvider(credential, {
+    scopes: ["https://graph.microsoft.com/.default"],
+  });
+
+  return Client.initWithMiddleware({
+    debugLogging: true,
+    authProvider,
+  });
+};

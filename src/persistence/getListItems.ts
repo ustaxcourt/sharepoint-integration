@@ -19,7 +19,7 @@ export type GetListItemsFunction = ({
   listId,
 }: GetListItemsParams) => Promise<GetListItemsResult>;
 
-export const GetListItems: GetListItemsFunction = async ({
+export const getListItems: GetListItemsFunction = async ({
   client,
   siteId,
   listId,

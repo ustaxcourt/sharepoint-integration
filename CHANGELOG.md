@@ -1,5 +1,11 @@
 # @ustaxcourt/sharepoint-integration
 
+## 0.0.4
+
+### Patch Changes
+
+- 0e96054: trying to get exports right
+
 ## 0.0.3
 
 ### Patch Changes

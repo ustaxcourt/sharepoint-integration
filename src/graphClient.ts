@@ -21,7 +21,7 @@ export type CreateGraphClientFunction = ({
   tenantId,
   graphClientId,
   graphClientSecret,
-  debugLogging = false,
+  debugLogging,
 }?: CreateGraphClientParameters) => Client;
 
 export const createGraphClient: CreateGraphClientFunction = ({

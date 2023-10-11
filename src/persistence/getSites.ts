@@ -13,7 +13,7 @@ export type GetSitesFunction = ({
 }: GetSitesParams) => Promise<SiteInfo[]>;
 
 export const getSites: GetSitesFunction = async ({ client }) => {
-  const res = await getAll({ client, queryString: "/sites" });
+  const res = (await getAll({ client, queryString: "/sites" })) as SiteInfo[];
   return res.map((item) => ({
     displayName: item.displayName,
     id: item.id,

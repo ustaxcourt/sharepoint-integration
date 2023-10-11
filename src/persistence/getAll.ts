@@ -8,7 +8,7 @@ export type GetAllParams = {
 export type GetAllFunction = ({
   client,
   queryString,
-}: GetAllParams) => Promise<any>;
+}: GetAllParams) => Promise<any[]>;
 
 export const getAll: GetAllFunction = async ({ client, queryString }) => {
   let res = await client.api(queryString).get();

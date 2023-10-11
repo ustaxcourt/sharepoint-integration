@@ -1,5 +1,13 @@
 # @ustaxcourt/sharepoint-integration
 
+## 0.0.6
+
+### Patch Changes
+
+- 1581db6: add option for debugLogging on graph requests
+- d71ca85: adding jest for testing
+- 4ac54fb: add getSites persistence method
+
 ## 0.0.5
 
 ### Patch Changes

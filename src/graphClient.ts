@@ -14,19 +14,22 @@ export type CreateGraphClientParameters = {
   tenantId?: string;
   graphClientId?: string;
   graphClientSecret?: string;
+  debugLogging?: boolean;
 };
 
 export type CreateGraphClientFunction = ({
   tenantId,
   graphClientId,
   graphClientSecret,
-}: CreateGraphClientParameters) => Client;
+  debugLogging,
+}?: CreateGraphClientParameters) => Client;
 
 export const createGraphClient: CreateGraphClientFunction = ({
   tenantId,
   graphClientId,
   graphClientSecret,
-}) => {
+  debugLogging = false,
+} = {}) => {
   tenantId = tenantId || process.env.MS_GRAPH_TENANT_ID;
   graphClientId = graphClientId || process.env.MS_GRAPH_CLIENT_ID;
   graphClientSecret = graphClientSecret || process.env.MS_GRAPH_CLIENT_SECRET;
@@ -54,7 +57,7 @@ export const createGraphClient: CreateGraphClientFunction = ({
   });
 
   return Client.initWithMiddleware({
-    debugLogging: true,
+    debugLogging,
     authProvider,
   });
 };

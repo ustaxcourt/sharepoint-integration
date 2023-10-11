@@ -9,7 +9,10 @@ export type GetListItemsParams = {
 
 export type GetListItemsResult = [
   {
-    [key: string]: any;
+    id: number;
+    fields: {
+      [key: string]: any;
+    };
   }
 ];
 
@@ -24,10 +27,10 @@ export const getListItems: GetListItemsFunction = async ({
   siteId,
   listId,
 }) => {
-  const result = await getAll({
+  const result = (await getAll({
     client,
     queryString: `/sites/${siteId}/lists/${listId}/items?$expand=fields`,
-  });
+  })) as GetListItemsResult;
 
   return result;
 };

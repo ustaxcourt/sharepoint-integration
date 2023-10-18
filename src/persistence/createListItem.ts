@@ -14,7 +14,7 @@ export type CreateListItemFunction = ({
   listId,
   siteId,
   newItem,
-}: CreateListItemParams) => Promise<void>;
+}: CreateListItemParams) => Promise<string>;
 
 export const createListItem: CreateListItemFunction = async ({
   client,
@@ -22,7 +22,9 @@ export const createListItem: CreateListItemFunction = async ({
   siteId,
   newItem,
 }) => {
-  await client
+  const createdItem = await client
     .api(`/sites/${siteId}/lists/${listId}/items`)
     .post({ fields: newItem });
+
+  return createdItem.id;
 };

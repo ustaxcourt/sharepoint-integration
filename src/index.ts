@@ -5,6 +5,7 @@ import { createListItem } from "./persistence/createListItem";
 import { createRootFolder } from "./persistence/createRootFolder";
 import { deleteListItem } from "./persistence/deleteListItem";
 import { getFolderItem } from "./persistence/getFolderItem";
+import { getListItem } from "./persistence/getListItem";
 import { getListItems } from "./persistence/getListItems";
 import { getSites } from "./persistence/getSites";
 import { updateListItem } from "./persistence/updateListItem";
@@ -18,6 +19,7 @@ export {
   createRootFolder,
   deleteListItem,
   getFolderItem,
+  getListItem,
   getListItems,
   getSites,
   updateListItem,

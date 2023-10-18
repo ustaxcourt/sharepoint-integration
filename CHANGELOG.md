@@ -1,5 +1,13 @@
 # @ustaxcourt/sharepoint-integration
 
+## 0.0.7
+
+### Patch Changes
+
+- fd5bfea: - added get list item (by id)
+  - create list item now returns the id of the item it just created
+  - added a functional integration test
+
 ## 0.0.6
 
 ### Patch Changes

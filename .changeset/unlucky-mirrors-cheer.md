@@ -2,8 +2,6 @@
 "@ustaxcourt/sharepoint-integration": patch
 ---
 
-added two new persistence methods
-- create list item and 
-- get list item
-
-also added a functional integration test
+- added get list item (by id)
+- create list item now returns the id of the item it just created
+- added a functional integration test

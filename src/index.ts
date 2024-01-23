@@ -10,6 +10,8 @@ import { getListItems } from "./persistence/getListItems";
 import { getSites } from "./persistence/getSites";
 import { updateListItem } from "./persistence/updateListItem";
 import { writeFile } from "./persistence/writeFile";
+import { getUsers } from "./persistence/getUsers";
+import { getUser } from "./persistence/getUser";
 
 export {
   createGraphClient,
@@ -22,6 +24,8 @@ export {
   getListItem,
   getListItems,
   getSites,
+  getUser,
+  getUsers,
   updateListItem,
   writeFile,
 };

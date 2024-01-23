@@ -76,3 +76,14 @@ doSomething().then(() => {
   console.log("we created a folder");
 });
 ```
+
+## Testing
+
+Populate your `.env` file with the required [Environment Variables](#environment-variables) and also be sure to include the following:
+
+| Name         | Value                                                                    |
+| ------------ | ------------------------------------------------------------------------ |
+| TEST_SITE_ID | Unique identifier of a Sharepoint Site to use for testing                |
+| TEST_LIST_ID | Unique identifier of a Sharepoint List to use for testing List Functions |
+
+Run `npm run test`

@@ -87,3 +87,17 @@ Populate your `.env` file with the required [Environment Variables](#environment
 | TEST_LIST_ID | Unique identifier of a Sharepoint List to use for testing List Functions |
 
 Run `npm run test`
+
+## Publishing
+
+This package is published on `npm` so that we can use it in other libraries. To help manage this, we are using [changesets cli](https://www.npmjs.com/package/@changesets/cli) to specify changes that are locked into semantic versions.
+
+To begin a new changeset, commit your work into your feature branch. Then type in the following command:
+
+```
+npx changeset add
+```
+
+Follow the guided prompts to begin a new changeset version.
+
+Then push the changes to Github for review. Once they are merged into the `main` branch, a subsequent PR will be made in order to begin the process of releasing.

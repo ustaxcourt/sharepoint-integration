@@ -1,5 +1,11 @@
 # @ustaxcourt/sharepoint-integration
 
+## 0.1.0
+
+### Minor Changes
+
+- 8c51a95: adding user persistence methods
+
 ## 0.0.7
 
 ### Patch Changes

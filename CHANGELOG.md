@@ -1,5 +1,11 @@
 # @ustaxcourt/sharepoint-integration
 
+## 0.2.1
+
+### Patch Changes
+
+- 1d5c67c: update dependencies
+
 ## 0.2.0
 
 ### Minor Changes

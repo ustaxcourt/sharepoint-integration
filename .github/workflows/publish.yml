@@ -30,12 +30,13 @@ jobs:
           cache: "pnpm"
           registry-url: "https://registry.npmjs.org"
           scope: "@ustaxcourt"
-      - run: pnpm install --frozen-lockfile
+      - run: |
+          pnpm self-update
+          pnpm install --frozen-lockfile
+          pnpm run build
 
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
-        with:
-          publish: pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

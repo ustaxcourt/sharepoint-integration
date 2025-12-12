@@ -28,8 +28,21 @@ jobs:
         with:
           node-version: 20.x
           cache: "pnpm"
-
+          registry-url: "https://registry.npmjs.org"
       - run: pnpm install --frozen-lockfile
+
+      - name: Check .npmrc location and content
+        run: |
+          # Check if the file exists and print its location
+          if [ -f ".npmrc" ]; then
+            echo ".npmrc exists in $(pwd)"
+            echo "--- .npmrc contents ---"
+            cat .npmrc
+            echo "-----------------------"
+          else
+            echo ".npmrc does not exist in $(pwd)"
+          fi
+            
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1

@@ -1,5 +1,12 @@
 # @ustaxcourt/sharepoint-integration
 
+## 0.2.4
+
+### Patch Changes
+
+- b53ab31: working on oidc
+- b53ab31: introduce getLists
+
 ## 0.2.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @ustaxcourt/sharepoint-integration
 
+## 0.2.2
+
+### Patch Changes
+
+- d019fac: update dependencies, introduce oidc for deployment
+
 ## 0.2.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@ustaxcourt/sharepoint-integration",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -21,7 +21,6 @@
       "@babel/runtime@<7.26.10": "^7.26.10",
       "js-yaml@<3.14.2": "^3.14.2",
       "brace-expansion@<2.0.2": "^2.0.2"
-
     }
   },
   "devDependencies": {

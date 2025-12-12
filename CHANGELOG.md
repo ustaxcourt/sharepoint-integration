@@ -1,5 +1,11 @@
 # @ustaxcourt/sharepoint-integration
 
+## 0.2.3
+
+### Patch Changes
+
+- 7f9b0e5: getting npm oidc to work
+
 ## 0.2.2
 
 ### Patch Changes

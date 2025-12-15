@@ -101,3 +101,26 @@ npx changeset add
 Follow the guided prompts to begin a new changeset version.
 
 Then push the changes to Github for review. Once they are merged into the `main` branch, a subsequent PR will be made in order to begin the process of releasing.
+
+### OIDC
+
+We are now using OIDC to securely publish packages to npmjs. This involves establishing a trust relationship with the package in npmjs and the CI/CD provider (Github).
+
+Follow the documentation provided by npmjs.com for [configuring the trusted publisher on npmjs.com](https://docs.npmjs.com/trusted-publishers).
+
+**Some observations:**
+
+- Trusted publishing requires npm CLI version `11.5.1` or later. We had to make sure Github Actions used a current version of Node or update the version because we observed `10.8.2` by default.
+- We needed to specify the repository url information in package.json to support provenance.
+
+  ```json, package.json
+  {
+    ...,
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ustaxcourt/sharepoint-integration"
+    },
+  }
+  ```
+
+-

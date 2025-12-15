@@ -30,7 +30,9 @@ jobs:
           cache: "pnpm"
           registry-url: "https://registry.npmjs.org"
           scope: "@ustaxcourt"
+          token: ${{ secrets.GITHUB_TOKEN }}
       - run: |
+          npm --version
           pnpm self-update
           pnpm install --frozen-lockfile
           pnpm run build
